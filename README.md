@@ -18,7 +18,7 @@ $ Create custom validators in Typescript (alpha TSMT validators are used as an e
 $ Compose custom valildators with Angular-supplied validators
 $ Use *nfIf in tandem with validator return info. to display real-time error or hint messages to aid in form completion
 $ Illustrate a show/hide password facility with binding applied to input type attribute and anchor text
-$ Illusrate how to implement a real-time password strength indicator with animated color display
+$ Illustrate how to implement a real-time password strength indicator with animated color display
 $ Show how to validate credit-card numbers for theoretical accuracy
 $ Show how to determine the type of credit card and dynamically display an image of that card type
 $ Processing of all form controls on submission
