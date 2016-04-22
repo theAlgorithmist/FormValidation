@@ -79,7 +79,7 @@ $ gulp copy:all (copies everything except the framework files)
 $ gulp build:all (build a complete, ready-to-run application)
 ```
 
-After installing the demo, execute _gulp build:all_ to create a ready-to-run application in the *dev* folder.  Execute _gulp serve_ to serve up the application and run the debug version of the demo.  After loading, enter a number into the input box.  The number will be formatted as-you-type using the Typescript Math Toolkit number formatter.  You may also select to insert commas for large numbers and experiment with rounding to the nearest tenth, half, and one for smaller numbers.
+After installing the demo, execute _gulp build:all_ to create a ready-to-run application in the *dev* folder.  Execute _gulp serve_ to serve up the application and run the debug version of the demo.  After loading, enter information into the form fields.
 
 ![Image of Form Demo]
 (http://algorithmist.net/image/form.png)
