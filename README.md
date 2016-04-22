@@ -16,7 +16,7 @@ Some of the demo features include
 $ Dynamically switch Bootstrap classes based on control validity
 $ Create custom validators in Typescript (alpha TSMT validators are used as an example)
 $ Compose custom valildators with Angular-supplied validators
-$ Use *nfIf in tandem with validator return info. to display real-time error or hint messages to aid in form completion
+$ Use *ngIf in tandem with validator return info. to display real-time error or hint messages to aid in form completion
 $ Illustrate a show/hide password facility with binding applied to input type attribute and anchor text
 $ Illustrate how to implement a real-time password strength indicator with animated color display
 $ Show how to validate credit-card numbers for theoretical accuracy
