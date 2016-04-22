@@ -1,0 +1,77 @@
+body 
+{ 
+	font-size : 15px;
+	font-family : Arial, Helvetica, Geneva, sans-serif; 
+	padding: 20px;
+}
+
+a 
+{
+  cursor:pointer;
+}
+
+.rounded
+{
+  width: 100%;
+  max-width:440px;
+  padding: 16px;
+  border: 2px solid #dddddd;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius:12px;
+}
+
+h1.form
+{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.logo-img
+{
+  float:left;
+  margin-right:6px;
+}
+
+.form-error-message
+{ 
+  margin-left: 8px;
+  color: #990000;
+  font-weight: bold;
+}
+
+.form-success-message
+{ 
+  margin-left: 8px;
+  color: #397D02;
+  font-weight: bold;
+}
+
+.form-content
+{
+  padding:6px;
+}
+
+.form-pad-bottom
+{
+	padding-bottom:15px;
+}
+
+.form-pad-top
+{
+	margin-top:15px;
+}
+
+.form-pad-left
+{
+  margin-left:10px;
+}
+
+.shortcrossfade
+{
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -transition: all .4s ease-in-out;
+}

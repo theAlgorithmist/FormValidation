@@ -1,0 +1,78 @@
+<!-- Angular 2 form demo -->
+<div class="container-fluid rounded">
+
+  <div class="row">
+    <img class="img-responsive logo-img" src="/assets/eyes.png">
+    <div>
+      <span class="pull-left">The Algorithmist</span>
+      <span class="pull-right">Form Demo</span>
+    </div>
+  </div>
+
+  <div class="row form-centered form-pad-top">
+    <h1 class='pass'>CREATE AN ACCOUNT</h1>  
+  </div>
+
+  <div class="row form-content">
+    <form [ngFormModel]="_accountForm" (ngSubmit)="__onAccountFormSubmit(_accountForm.value)">
+      <div class="form-group" [class.has-error]="!_name.valid && _name.touched" [class.has-success]="_name.valid && _name.touched">
+        <label for="fullname">Full Name</label>
+        <input class="form-control input" id="fullname" [ngFormControl]="_name" size="20" placeholder="Your Name" type="text" required>
+        <div *ngIf="_name.hasError('lengthInvalid')" class="form-error-message">Please enter first and last name</div>
+        <div *ngIf="_name.hasError('nameRequired')" class="form-error-message">Full name is required</div>
+        <div *ngIf="_name.hasError('invalidChars')" class="form-error-message">Use letters only in name</div>
+      </div>
+
+      <div class="form-group" [class.has-error]="!_email.valid && _email.touched" [class.has-success]="_email.valid && _email.touched">
+        <label for="email">Email address</label>
+        <input class="form-control input" id="email" size="20" [ngFormControl]="_email" placeholder="Enter Email" type="text" required>
+        <div *ngIf="_email.hasError('invalidFormat')" class="form-error-message">Email requires '.' and '@' characters</div>
+        <div *ngIf="_email.hasError('invalidDomain')" class="form-error-message">Please enter correct domain</div>
+      </div>
+        
+      <div class="form-group" [class.has-error]="!_password.valid && _password.touched" [class.has-success]="_password.valid && _password.touched">
+        <label for="password">Password: Minimum 8 chars with at least one number and one special character</label>
+        <input class="form-control input" id="password" size="20" [ngFormControl]="_password" [style.background-color]="_color" 
+               placeholder="Enter Password" type="{{_passInputType}}" (keyup)="__onPasswordKeyUp()" required>
+        <span>{{_passStrength}}</span><a style="float:right;" (click)="__onShowPassword()">{{_showPasswordTxt}}</a>
+        <div *ngIf="_password.hasError('invalidLength')" class="form-error-message">Insufficient length</div>
+        <div *ngIf="_password.hasError('minNumber')" class="form-error-message">At least one number</div>
+        <div *ngIf="_password.hasError('minChar')" class="form-error-message">At least one character (a-z/A-Z)</div>
+        <div *ngIf="_password.hasError('specialChar')" class="form-error-message">At least one special character</div>
+      </div>
+
+      <div class="form-group">
+        <div class="checkbox login-remember">
+          <label> <input value="remember" checked="checked" type="checkbox" [ngFormControl]="_remember"> Remember Me </label>
+        </div>
+      </div>
+
+      <hr/>
+
+      <div class="form-group" [class.has-error]="!_credit.valid && _credit.touched" [class.has-success]="_credit.valid && _credit.touched">
+        <label>Card Number</label>
+        <div>
+          <img src="{{_ccImgSrc}}" width="40" height="25"> <span> &nbsp; {{_selectedCard}} </span>
+          <input class="form-control" required type="number" id="creditcard" [ngFormControl]="_credit" placeholder="Credit Card Number" 
+                 (keyup)="__onCCKeyUp()" required>
+          <div *ngIf="_credit.hasError('minLength')" class="form-error-message">Not Enough CC Digits</div>
+          <div *ngIf="_credit.hasError('invalid')" class="form-error-message">Invalid Credit Card Number</div>
+        </div>
+      </div>
+                 
+      <div class="form-group" [class.has-error]="!_expire.valid && _expire.touched" [class.has-success]="_expire.valid && _expire.touched">
+        <label>Expires (mm/yy)</label>
+        <input required type="text" id="expire" class="form-control" [ngFormControl]="_expire" placeholder="Exp. Date" required>
+         <div *ngIf="_expire.hasError('minLength')" class="form-error-message">Month and Year Required</div>
+         <div *ngIf="_expire.hasError('invalid')" class="form-error-message">Invalid Expiration Date</div>
+      </div>
+
+      <div class="form-group">
+        <input class="btn btn-block btn-lg btn-primary" value="SUBMIT INFORMATION" type="submit">
+        <div *ngIf="_accountForm.valid" class="form-success-message">Form is completely valid.</div>
+        <div *ngIf="!_accountForm.valid" class="form-error-message">Please correct highlighted or empty fields</div>
+      </div>
+
+    </form>
+  </div>     
+</div>
